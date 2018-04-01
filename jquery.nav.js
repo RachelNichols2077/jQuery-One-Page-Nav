@@ -117,7 +117,7 @@
 			self.$nav.each(function() {
 				linkHref = self.getHash($(this));
 				$target = $('#' + linkHref);
-
+				if($.isEmptyObject(linkHref)){ return //Link is empty. Don't do anything.}
 				if($target.length) {
 					topPos = $target.offset().top;
 					self.sections[linkHref] = Math.round(topPos);
